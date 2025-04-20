@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HezwinCheat - Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="rain"></div> <!-- Yağmur efekti için eklenen div -->
+
+    <div class="notification" id="notification">
+        <h2>HezwinCheat Hoş Geldiniz</h2>
+        <p>!! Play Safe Avoid Report !!</p>
+        <button class="close-btn" onclick="closeNotification()">OK</button>
+    </div>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="hezwin.png" alt="Logo" class="logo-image">
+        </div>
+
+        <div class="download-section">
+            <h2 class="glow">HezwinCheat</h2>
+            <div class="options">
+                <label><input type="checkbox" value="global" class="download-option"> <span class="link">Global</span></label>
+                <label><input type="checkbox" value="korea" class="download-option"> <span class="link">Korea</span></label>
+                <label><input type="checkbox" value="taiwan" class="download-option"> <span class="link">Taiwan</span></label>
+                <label><input type="checkbox" value="vietnam" class="download-option"> <span class="link">Vietnam</span></label>
+            </div>
+            <button class="download-button" onclick="downloadSelected()">Download</button>
+
+            <!-- Telegram bilgileri -->
+            <div class="telegram-info">
+                <p>Telegram linkimiz:</p>
+                <p>OWNER - <a href="https://t.me/Hezwin" target="_blank">@Hezwin</a></p>
+                <p>Channel - <a href="https://t.me/+Gt1LBA2ZFBpmZjg0" target="_blank">Hezwin Channel</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadSelected() {
+            const options = document.querySelectorAll(".download-option");
+            let selectedLink = '';
+
+            options.forEach(option => {
+                if (option.checked) {
+                    switch (option.value) {
+                        case 'global':
+                            selectedLink = 'https://download1530.mediafire.com/p681pm1j1olgnBxrGRxYlrA4gghAn7xjVfxG0q0rf_X-F5uoZ6IGv5rMyuK3UP6eZG8oSZwFkRkOF3XT6glFpE3X2OxI2_CiO0F97qlGsh-63nhyLy5kyKuXIH4k_2i0aZPesF7LebicmC2UrtaRUv89HHaABUt3jM4dnkUg0ybIWw/42rnp3sdnus94cm/GL+32Bit+-+%28%40HEZWINCheat%29.apk'; // Global için indirme bağlantısı
+                            break;
+                        case 'korea':
+                            selectedLink = 'https://download937.mediafire.com/oy29701pvj6gmAZXcbBUBsBhZ4h3qn5WA_2O9Gkxu6eXceFJygT7SJk6IxsoqqY6_TwZABsA3dRk7EcgXl9flFrQci9AH_uGWFdk-OhUqOpuQ8etDo042iZRtPQtBPXGZMlIHIdE0OP9Mv5n4IJYSYukjJ1besuUKpyvdT8wDqvJtw/nuq2idtz251n9uj/KR+32Bit+-+%28%40HEZWINCheat%29.apk'; // Korea için indirme bağlantısı
+                            break;
+                        case 'taiwan':
+                            selectedLink = 'https://download937.mediafire.com/nay180glvurgxtifsU-h5MoYZutYdY2BlHFFxBwefFaBPiYB92kF_5bQlyRamG-dnpR7NpGQryo3s0MrWkFrFu8az6sWOCGBNgSqWv115RyEQtOJ7Xf4UIVsR_aQsePHx4JtFfXiowLAHDC_btyDVeh0eTAe2W1Z1KKzTFEaUEbO/7spklr5ze2b615e/TW+32Bit+-+%28%40HEZWINCheat%29.apk'; // Taiwan için indirme bağlantısı
+                            break;
+                        case 'vietnam':
+                            selectedLink = 'https://download1078.mediafire.com/nb57xvilz6xg0Pwa1Kun12Ilo3uCX7u_nUJXABP9zhqzWX3Edr6Hk6OSwQDN1K2KQ7zQU17jvWecam4jffbHu5m30myAo3KubNJS64_bA2kBh8CZh8VBxyqWlciRwI1em_WrfC9csmSPohXzr6w1L1BF27aeZJMA9M0R_Rx4NJOp/nplgt06o8roko6e/VN+32Bit+-+%28%40HEZWINCheat%29.apk'; // Vietnam için indirme bağlantısı
+                            break;
+                    }
+                }
+            });
+
+            // Eğer bir bağlantı seçilmişse, o bağlantıya yönlendir
+            if (selectedLink) {
+                window.location.href = selectedLink; // Seçilen bağlantıya yönlendir
+            } else {
+                alert('Lütfen bir seçenek seçin.');
+            }
+        }
+
+        function closeNotification() {
+            document.getElementById('notification').style.display = 'none';
+        }
+
+        window.onload = function () {
+            document.getElementById('notification').style.display = 'block';
+        };
+    </script>
+
+    <style>
+        .telegram-info {
+            margin-top: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .telegram-info a {
+            color: #00bfff; /* Parlak mavi yazı rengi */
+            text-decoration: none;
+        }
+
+        .telegram-info a:hover {
+            text-decoration: underline; /* Hover rengi */
+        }
+    </style>
+</body>
+</html>
